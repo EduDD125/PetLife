@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.userArea.UserAreaActivity">
+
+        <!-- Incluindo a Toolbar personalizada -->
+        <include
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_constraintTop_toTopOf="parent"/>
+
+        <!-- Conteúdo da Activity -->
+        <TextView
+            android:id="@+id/userPetsSectionTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your pets"
+            android:textSize="24sp"
+            app:layout_constraintTop_toBottomOf="@+id/customToolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:baselineAligned="false" />
+
+        <LinearLayout
+            android:id="@+id/buttonsContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/userPetsSectionTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <Button
+                android:id="@+id/seeDogsInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Doggy"
+                android:textAllCaps="false"
+                android:layout_marginRight="16dp"
+                />
+
+            <Button
+                android:id="@+id/seeCattysInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Catty"
+                android:textAllCaps="false"
+                android:layout_marginLeft="16dp"
+                />
+
+        </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
