@@ -2,4 +2,12 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="colorTitle">#3E4A89</color> <!-- Azul escuro para títulos -->
+    <color name="colorText">#4A4A4A</color> <!-- Cinza escuro para textos -->
+    <color name="colorNeutralButton">#B0BEC5</color> <!-- Cinza claro para botões neutros -->
+    <color name="colorAddButton">#4CAF50</color> <!-- Verde para botões de adição -->
+    <color name="colorDeleteButton">#F44336</color> <!-- Vermelho para botões de deleção -->
+    <color name="colorBackgroundMain">#F5F5F5</color> <!-- Cinza muito claro para o fundo principal -->
+    <color name="colorCardBackground">#FFFFFF</color> <!-- Branco para o fundo dos cards -->
+
 </resources>
