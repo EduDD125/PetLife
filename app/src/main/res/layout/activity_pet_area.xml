@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.petArea.PetAreaActivity">
+
+    <include
+        android:id="@+id/customToolbar"
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarDivider"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/petInfosVw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="32sp"
+        app:layout_constraintTop_toBottomOf="@id/customToolbar">
+
+
+        <TextView
+            android:id="@+id/petInfosTitleTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Basic Infos"
+            android:textSize="24sp"
+            app:layout_constraintTop_toTopOf="@+id/petInfosVw"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:baselineAligned="false" />
+
+        <LinearLayout
+            android:id="@+id/petNameLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/petInfosTitleTv">
+
+            <TextView
+                android:id="@+id/petNameLabelTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name: "
+                android:textSize="16dp"/>
+
+            <TextView
+                android:id="@+id/petNameTextTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pet_name"
+                android:textSize="16dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/petBirthDateLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/petNameLL">
+
+            <TextView
+                android:id="@+id/petBirthDateLabelTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Birth date: "
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/petBirthDateTextTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pet_birth_date"
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/petColorLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/petBirthDateLL">
+
+            <TextView
+                android:id="@+id/petColorLabelTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Color: "
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/petColorTextTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pet_color"
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/petTypeLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/petColorLL">
+
+            <TextView
+                android:id="@+id/petTypeLabelTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Type: "
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/petTypeTextTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pet_type"
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/petSizeLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/petTypeLL">
+
+            <TextView
+                android:id="@+id/petSizeLabelTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Size: "
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/petSizeTextTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pet_size"
+              android:textSize="16sp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/dividerVw"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/petInfosVw"/>
+
+    <LinearLayout
+        android:id="@+id/petCaresVw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="32sp"
+        app:layout_constraintTop_toBottomOf="@id/dividerVw">
+
+
+        <TextView
+            android:id="@+id/petCaresTitleTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Last pet cares"
+            android:textSize="24sp"
+            app:layout_constraintTop_toTopOf="@+id/petCaresVw"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:baselineAligned="false" />
+
+        <LinearLayout
+            android:id="@+id/petLastVaccinationLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/petCaresTitleTv">
+
+            <TextView
+                android:id="@+id/petLastVaccinationLabelTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Last vaccination: "
+                android:textSize="16dp"/>
+
+            <TextView
+                android:id="@+id/petLastVaccinationTextTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pet_last_vaccination"
+                android:textSize="16dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/petPetshopVisitLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/petLastVaccinationLL">
+
+            <TextView
+                android:id="@+id/petPetshopVisitLabelTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Last petshop visit: "
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/petPetshopVisitTextTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pet_last_visit_to_petshop"
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/petVeterinarianVisitLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/petPetshopVisitLL">
+
+            <TextView
+                android:id="@+id/petVeterinarianVisitLabelTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Last veterinarian visit: "
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/petVeterinarianVisitTextTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pet_last_visit_to_veterinarian"
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

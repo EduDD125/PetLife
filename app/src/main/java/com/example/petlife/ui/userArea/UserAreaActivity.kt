@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.petlife.R
 import com.example.petlife.databinding.ActivityMainBinding
@@ -26,8 +27,12 @@ class UserAreaActivity : AppCompatActivity() {
             subtitle = this@UserAreaActivity.javaClass.canonicalName
         }
 
+        petActivityLaucher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+
+        }
+
         amb.seeDogsInfo.setOnClickListener {
-            Intent("ACTION_TO_OPEN_DOGS_INFO_SCREEN").apply {
+            Intent("ACTION_TO_OPEN_PETS_INFO_SCREEN").apply {
                 petActivityLaucher.launch(this)
             }
         }
