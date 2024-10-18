@@ -10,10 +10,11 @@
 
         <!-- Incluindo a Toolbar personalizada -->
         <include
+            android:id="@+id/customToolbar"
             layout="@layout/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <!-- Conteúdo da Activity -->
         <TextView
