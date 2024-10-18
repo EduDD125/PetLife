@@ -9,7 +9,9 @@ class Pet(
     var birthDate: String,
     var size: String,
     var type: String,
-    var petsCares: List<Care>
+    var lastPetshopVisit: String,
+    var lastVeterinarianVisit: String,
+    var lastVaccination: String
 ) {
     fun setName(newName: String) {
         name = newName
@@ -44,11 +46,22 @@ class Pet(
     fun getPetYearsOld(): Int {
         return LocalDate.now().year - birthDate.takeLast(4).toInt()
     }
-    fun getPetsCares(): List<Care> {
-        return petsCares;
+    fun setLastPetshopVisit(newDate: String) {
+        lastPetshopVisit = newDate
     }
-    fun getCareLastVisityOfAType (type: CareType): Care? {
-        return petsCares.filter { petCare -> petCare.type == type }
-            .maxByOrNull { it.date }
+    fun getLastPetshopVisit(): String {
+        return lastPetshopVisit
+    }
+    fun setLastVeterinariaVisit(newDate: String) {
+        lastVeterinarianVisit = newDate
+    }
+    fun getLastVeterinarianVisit(): String {
+        return lastVeterinarianVisit
+    }
+    fun setLastVaccination(newDate: String) {
+        lastVaccination = newDate
+    }
+    fun getLastVaccination(): String {
+        return lastVaccination
     }
 }
