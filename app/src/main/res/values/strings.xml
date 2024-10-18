@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">PetLife</string>
+    <string name="pet_name">…</string>
+    <string name="pet_birth_date">…</string>
+    <string name="pet_color">…</string>
+    <string name="pet_type">…</string>
+    <string name="pet_size">…</string>
+    <string name="pet_last_visit_to_petshop">…</string>
+    <string name="pet_last_visit_to_veterinarian">…</string>
+    <string name="pet_last_vaccination">…</string>
 </resources>
