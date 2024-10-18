@@ -3,26 +3,26 @@ package com.example.petlife.domain.model
 import java.time.LocalDate
 
 class Care(
-    var date: LocalDate,
-    var type: CareType,
-    var description: String
+    private var date: LocalDate,
+    private var type: CareType,
+    private var description: String
 ) {
-    fun seDate(newDate: LocalDate) {
+    fun seCareDate(newDate: LocalDate) {
         date = newDate
     }
-    fun getDate(): LocalDate {
+    fun getCareDate(): LocalDate {
         return date
     }
-    fun setType(newType: CareType) {
+    fun setCareType(newType: CareType) {
         type = newType
     }
-    fun getType(): CareType {
+    fun getCareType(): CareType {
         return type
     }
-    fun setDescription(newDescription: String) {
+    fun setCareDescription(newDescription: String) {
         description = newDescription
     }
-    fun getDescription(): String {
+    fun getCareDescription(): String {
         return description
     }
 }

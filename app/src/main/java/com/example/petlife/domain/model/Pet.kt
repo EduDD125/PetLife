@@ -13,55 +13,55 @@ class Pet(
     var lastVeterinarianVisit: String,
     var lastVaccination: String
 ) {
-    fun setName(newName: String) {
+    fun setPetName(newName: String) {
         name = newName
     }
-    fun getName(): String {
+    fun getPetName(): String {
         return name
     }
-    fun setColor(newColor: String) {
+    fun setPetColor(newColor: String) {
         color = newColor
     }
-    fun getColor(): String {
+    fun getPetColor(): String {
         return color
     }
-    fun setBirthdate(newBirthDate: String) {
+    fun setPetBirthdate(newBirthDate: String) {
         birthDate = newBirthDate
     }
-    fun getBirthdate(): String {
+    fun getPetBirthdate(): String {
         return birthDate
     }
-    fun setSize(newSize: String) {
+    fun setPetSize(newSize: String) {
         size = newSize
     }
-    fun getSize(): String {
+    fun getPetSize(): String {
         return size
     }
-    fun setType(newType: String) {
+    fun setPetType(newType: String) {
         type = newType
     }
-    fun getType(): String {
+    fun getPetType(): String {
         return type
     }
     fun getPetYearsOld(): Int {
         return LocalDate.now().year - birthDate.takeLast(4).toInt()
     }
-    fun setLastPetshopVisit(newDate: String) {
+    fun setPetLastPetshopVisit(newDate: String) {
         lastPetshopVisit = newDate
     }
-    fun getLastPetshopVisit(): String {
+    fun getPetLastPetshopVisit(): String {
         return lastPetshopVisit
     }
-    fun setLastVeterinariaVisit(newDate: String) {
+    fun setPetLastVeterinariaVisit(newDate: String) {
         lastVeterinarianVisit = newDate
     }
-    fun getLastVeterinarianVisit(): String {
+    fun getPetLastVeterinarianVisit(): String {
         return lastVeterinarianVisit
     }
-    fun setLastVaccination(newDate: String) {
+    fun setPetLastVaccination(newDate: String) {
         lastVaccination = newDate
     }
-    fun getLastVaccination(): String {
+    fun getPetLastVaccination(): String {
         return lastVaccination
     }
 }
