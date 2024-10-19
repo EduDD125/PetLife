@@ -41,7 +41,7 @@
             app:layout_constraintBottom_toBottomOf="parent">
 
             <Button
-                android:id="@+id/seeDogsInfo"
+                android:id="@+id/seeDogsInfoBt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Doggy"
@@ -50,7 +50,7 @@
                 />
 
             <Button
-                android:id="@+id/seeCattysInfo"
+                android:id="@+id/seeCattysInfoBt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Catty"
