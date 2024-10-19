@@ -4,14 +4,14 @@ import android.os.Parcel
 import android.os.Parcelable
 
 data class Pet(
-    val name: String,
-    val birthDate: String,
-    val size: String,
-    val type: String,
-    val color: String,
-    val lastVetVisit: String,
-    val lastVaccination: String,
-    val lastPetshopVisit: String
+    var name: String,
+    var birthDate: String,
+    var size: String,
+    var type: String,
+    var color: String,
+    var lastVetVisit: String,
+    var lastVaccination: String,
+    var lastPetshopVisit: String
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString() ?: "",

@@ -163,6 +163,7 @@
                 android:hint="input new size..."
                 android:inputType="textUri"
                 android:minHeight="48dp"
+
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/petSizeLabelTv" />
