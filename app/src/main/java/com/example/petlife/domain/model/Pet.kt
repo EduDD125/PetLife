@@ -9,6 +9,7 @@ data class Pet(
     val birthDate: String,
     val size: String,
     val type: String,
+    val color: String,
     val lastVetVisit: String,
     val lastVaccination: String,
     val lastPetshopVisit: String
@@ -21,6 +22,7 @@ data class Pet(
         parcel.readString() ?: "",
         parcel.readString() ?: "",
         parcel.readString() ?: "",
+        parcel.readString() ?: "" ,
         parcel.readString() ?: ""
     )
 
@@ -29,6 +31,7 @@ data class Pet(
         parcel.writeString(breed)
         parcel.writeString(birthDate)
         parcel.writeString(size)
+        parcel.writeString(color)
         parcel.writeString(type)
         parcel.writeString(lastVetVisit)
         parcel.writeString(lastVaccination)
