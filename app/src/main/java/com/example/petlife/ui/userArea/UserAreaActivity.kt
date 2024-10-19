@@ -49,8 +49,7 @@ class UserAreaActivity : AppCompatActivity() {
                     }
                 }
             }
-
-            }
+        }
 
         amb.seeDogsInfoBt.setOnClickListener {
             Intent("ACTION_TO_OPEN_PETS_INFO_SCREEN").apply {
