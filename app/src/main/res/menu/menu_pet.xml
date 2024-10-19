@@ -1,22 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item
-        android:title="Pet settings"
-        app:showAsAction="never">
-        <menu>
-            <item
-                android:id="@+id/editPetInfos"
-                android:title="Edit pet infos"/>
-            <item
-                android:id="@+id/editLastTimeInVet"
-                android:title="Edit last time in vet"/>
-            <item
-                android:id="@+id/editLastTimeInPetshop"
-                android:title="Edit last time in petshop"/>
-            <item
-                android:id="@+id/editLastVaccination"
-                android:title="Edit last vaccination"/>
-        </menu>
-    </item>
+        <item
+            android:id="@+id/editPetInfos"
+            android:title="Edit pet infos"/>
+        <item
+            android:id="@+id/editLastTimeInVet"
+            android:title="Edit last time in vet"/>
+        <item
+            android:id="@+id/editLastTimeInPetshop"
+            android:title="Edit last time in petshop"/>
+        <item
+            android:id="@+id/editLastVaccination"
+            android:title="Edit last vaccination"/>
 </menu>
