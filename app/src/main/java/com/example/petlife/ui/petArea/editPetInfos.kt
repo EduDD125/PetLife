@@ -51,14 +51,13 @@ class editPetInfos : AppCompatActivity() {
                 putExtra("update_infos", selectedPet)
                 setResult(RESULT_OK, this)
             }
-
             finish()
         }
 
         epib.cancelEditBt.setOnClickListener {
             Intent().apply {
 
-                putExtra("pet_info", selectedPet)
+                putExtra("update_infos", selectedPet)
                 setResult(RESULT_OK, this)
             }
             finish()
