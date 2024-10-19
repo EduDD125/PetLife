@@ -12,7 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PetLife"
         tools:targetApi="31">
-
+        <activity
+            android:name=".ui.petArea.lastVaccinationDate"
+            android:exported="false" />
+        <activity
+            android:name=".ui.petArea.lastPestshopDate"
+            android:exported="false" />
+        <activity
+            android:name=".ui.petArea.lastVetDate"
+            android:exported="false" />
         <activity
             android:name=".ui.userArea.UserAreaActivity"
             android:exported="true">
@@ -20,7 +28,6 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ui.petArea.PetAreaActivity"
             android:exported="false">
@@ -30,17 +37,15 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ui.petArea.editPetInfos"
             android:exported="false">
             <intent-filter>
                 <action android:name="ACTION_TO_OPEN_EDIT_PETS_INFOS_SCREEN" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </activity >
-
-
+        </activity>
     </application>
 
 </manifest>
