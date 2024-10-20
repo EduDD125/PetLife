@@ -33,7 +33,8 @@ class PetAreaActivity : AppCompatActivity() {
         editPetInfosActivity = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == RESULT_OK) {
-                result.data?.getParcelableExtra<Pet>("updated_infos").let {
+                result.data?.getParcelableExtra<Pet>("update_infos")?.let {
+                    selectedPet = it
                     updatePetDetails()
                 }
             }
