@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.petArea.LastPestshopDate"
+            android:name=".ui.petArea.LastPetshopDate"
             android:exported="false">
             <intent-filter>
                 <action android:name="ACTION_TO_OPEN_EDIT_PETS_LAST_PETSHOP_VISIT" />
