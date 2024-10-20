@@ -34,5 +34,13 @@ class LastVaccinationDate : AppCompatActivity() {
             }
             finish()
         }
+
+        lvda.cancelEditBt.setOnClickListener {
+            Intent().apply {
+                putExtra("back_from_edit_petshop_visit_date", lastVaccination)
+                setResult(RESULT_OK, this)
+            }
+            finish()
+        }
     }
 }

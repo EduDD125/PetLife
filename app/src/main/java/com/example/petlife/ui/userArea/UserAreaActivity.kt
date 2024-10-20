@@ -20,7 +20,7 @@ class UserAreaActivity : AppCompatActivity() {
                         "preto", "10/10/2024", "12/10/2024",
                         "15/10/2024")
 
-    private var gatinho: Pet = Pet("Bichano","01/06/2000","branco",  "gato",
+    private var gatinho: Pet = Pet("Bichano","01/06/2000","pequeno",  "gato",
         "branco", "10/10/2024", "12/10/2024",
         "15/10/2024")
 
