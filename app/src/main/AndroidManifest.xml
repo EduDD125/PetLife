@@ -14,13 +14,28 @@
         tools:targetApi="31">
         <activity
             android:name=".ui.petArea.lastVaccinationDate"
-            android:exported="false" />
+            android:exported="false">
+            <intent-filter>
+                <action android:name="ACTION_TO_OPEN_EDIT_PETS_LAST_VACCINATION" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ui.petArea.lastPestshopDate"
-            android:exported="false" />
+            android:exported="false">
+            <intent-filter>
+                <action android:name="ACTION_TO_OPEN_EDIT_PETS_LAST_PETSHOP_VISIT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ui.petArea.lastVetDate"
-            android:exported="false" />
+            android:exported="false">
+            <intent-filter>
+                <action android:name="ACTION_TO_OPEN_EDIT_PETS_LAST_VET_VISIT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ui.userArea.UserAreaActivity"
             android:exported="true">
@@ -33,7 +48,6 @@
             android:exported="false">
             <intent-filter>
                 <action android:name="ACTION_TO_OPEN_PETS_INFO_SCREEN" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -42,7 +56,6 @@
             android:exported="false">
             <intent-filter>
                 <action android:name="ACTION_TO_OPEN_EDIT_PETS_INFOS_SCREEN" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

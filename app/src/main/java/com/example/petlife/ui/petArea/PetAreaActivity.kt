@@ -32,7 +32,7 @@ class PetAreaActivity : AppCompatActivity() {
         editPetInfosActivity = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == RESULT_OK) {
-                result.data?.getParcelableExtra<Pet>("update_infos").let {
+                result.data?.getParcelableExtra<Pet>("updated_infos").let {
                     paa.petNameTextTv.text = it?.name
                     paa.petSizeTextTv.text = it?.size
                     paa.petColorTextTv.text = it?.color
@@ -56,6 +56,17 @@ class PetAreaActivity : AppCompatActivity() {
             paa.petVeterinarianVisitTextTv.text = pet.lastVetVisit
             paa.petLastVaccinationTextTv.text = pet.lastVaccination
         }
+
+
+
+        paa.backBt.setOnClickListener {
+            Intent().apply {
+
+                putExtra("back_to_user_area", selectedPet)
+                setResult(RESULT_OK, this)
+            }
+            finish()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -73,12 +84,24 @@ class PetAreaActivity : AppCompatActivity() {
                 true
             }
             R.id.editLastTimeInVet -> {
+                Intent("ACTION_TO_OPEN_EDIT_PETS_LAST_VET_VISIT").apply {
+                    putExtra("pet_infos_for_edition", selectedPet)
+                    editPetInfosActivity.launch(this)
+                }
                 true
             }
             R.id.editLastTimeInPetshop -> {
+                Intent("ACTION_TO_OPEN_EDIT_PETS_LAST_PETSHOP_VISIT").apply {
+                    putExtra("pet_infos_for_edition", selectedPet)
+                    editPetInfosActivity.launch(this)
+                }
                 true
             }
             R.id.editLastVaccination -> {
+                Intent("ACTION_TO_OPEN_EDIT_PETS_LAST_VACCINATION").apply {
+                    putExtra("pet_infos_for_edition", selectedPet)
+                    editPetInfosActivity.launch(this)
+                }
                 true
             }
             else -> { false }
