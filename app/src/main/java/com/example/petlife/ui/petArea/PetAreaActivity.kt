@@ -114,21 +114,21 @@ class PetAreaActivity : AppCompatActivity() {
             }
             R.id.editLastTimeInVet -> {
                 Intent("ACTION_TO_OPEN_EDIT_PETS_LAST_VET_VISIT").apply {
-                    putExtra("pet_infos_for_edition", selectedPet.lastVetVisit)
+                    putExtra("last_vet_visit_date_edit", selectedPet.lastVetVisit)
                     editLastVetVisitDateActivity.launch(this)
                 }
                 true
             }
             R.id.editLastTimeInPetshop -> {
                 Intent("ACTION_TO_OPEN_EDIT_PETS_LAST_PETSHOP_VISIT").apply {
-                    putExtra("pet_infos_for_edition", selectedPet.lastPetshopVisit)
+                    putExtra("last_petshop_visit_date_edit", selectedPet.lastPetshopVisit)
                     editLastPetshopDateActivity.launch(this)
                 }
                 true
             }
             R.id.editLastVaccination -> {
                 Intent("ACTION_TO_OPEN_EDIT_PETS_LAST_VACCINATION").apply {
-                    putExtra("pet_infos_for_edition", selectedPet.lastVaccination)
+                    putExtra("last_vaccination_date_edit", selectedPet.lastVaccination)
                     editLastVaccinationDateActivity.launch(this)
                 }
                 true
