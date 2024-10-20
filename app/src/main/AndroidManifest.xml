@@ -13,7 +13,7 @@
         android:theme="@style/Theme.PetLife"
         tools:targetApi="31">
         <activity
-            android:name=".ui.petArea.lastVaccinationDate"
+            android:name=".ui.petArea.LastVaccinationDate"
             android:exported="false">
             <intent-filter>
                 <action android:name="ACTION_TO_OPEN_EDIT_PETS_LAST_VACCINATION" />
@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.petArea.lastPestshopDate"
+            android:name=".ui.petArea.LastPestshopDate"
             android:exported="false">
             <intent-filter>
                 <action android:name="ACTION_TO_OPEN_EDIT_PETS_LAST_PETSHOP_VISIT" />
@@ -29,7 +29,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.petArea.lastVetDate"
+            android:name=".ui.petArea.LastVetDate"
             android:exported="false">
             <intent-filter>
                 <action android:name="ACTION_TO_OPEN_EDIT_PETS_LAST_VET_VISIT" />
