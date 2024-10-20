@@ -16,12 +16,12 @@ class UserAreaActivity : AppCompatActivity() {
 
     private lateinit var petActivityLaucher: ActivityResultLauncher<Intent>
 
-    private var doguinho: Pet = Pet("Toto", "preto", "01/06/2000", "medio",
-                        "cao", "10/10/2024", "12/10/2024",
+    private var doguinho: Pet = Pet("Toto", "01/06/2000","medio" , "cao",
+                        "preto", "10/10/2024", "12/10/2024",
                         "15/10/2024")
 
-    private var gatinho: Pet = Pet("Bichano", "branco", "01/06/2000", "pequeno",
-        "gato", "10/10/2024", "12/10/2024",
+    private var gatinho: Pet = Pet("Bichano","01/06/2000","branco",  "gato",
+        "branco", "10/10/2024", "12/10/2024",
         "15/10/2024")
 
     override fun onCreate(savedInstanceState: Bundle?) {
