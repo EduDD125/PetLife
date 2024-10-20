@@ -17,45 +17,69 @@ class PetAreaActivity : AppCompatActivity() {
     }
 
     private lateinit var editPetInfosActivity: ActivityResultLauncher<Intent>
+    private lateinit var editLastPetshopDateActivity: ActivityResultLauncher<Intent>
+    private lateinit var editLastVetVisitDateActivity: ActivityResultLauncher<Intent>
+    private lateinit var editLastVaccinationDateActivity: ActivityResultLauncher<Intent>
 
 
-    private var selectedPet: Pet = Pet("", "", "", "", "", "", "", "")
+    private lateinit var selectedPet: Pet
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(paa.root)
 
         setSupportActionBar(paa.customToolbar.customToolbar)
-        supportActionBar?.apply {
-        }
 
         editPetInfosActivity = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == RESULT_OK) {
                 result.data?.getParcelableExtra<Pet>("updated_infos").let {
-                    paa.petNameTextTv.text = it?.name
-                    paa.petSizeTextTv.text = it?.size
-                    paa.petColorTextTv.text = it?.color
-                    paa.petTypeTextTv.text = it?.type
-                    paa.petBirthDateTextTv.text = it?.birthDate
-                    paa.petPetshopVisitTextTv.text = it?.lastPetshopVisit
-                    paa.petVeterinarianVisitTextTv.text = it?.lastVetVisit
-                    paa.petLastVaccinationTextTv.text = it?.lastVaccination
+                    updatePetDetails()
                 }
             }
         }
 
+        editLastPetshopDateActivity = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) { result ->
+            if (result.resultCode == RESULT_OK) {
+                result.data?.getStringExtra("back_from_edit_petshop_visit_date")?.let {
+                    selectedPet.lastPetshopVisit = it
+                    paa.petPetshopVisitTextTv.text = it
+                }
+            }
+        }
+
+        editLastVetVisitDateActivity = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) { result ->
+            if (result.resultCode == RESULT_OK) {
+                result.data?.getStringExtra("back_from_edit_vet_visit_date")?.let {
+                    selectedPet.lastVetVisit = it
+                    paa.petVeterinarianVisitTextTv.text = it
+                }
+            }
+        }
+
+        editLastVaccinationDateActivity = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) { result ->
+            if (result.resultCode == RESULT_OK) {
+                result.data?.getStringExtra("back_from_edit_vaccination_date")?.let {
+                    selectedPet.lastVaccination = it
+                    paa.petLastVaccinationTextTv.text = it
+                }
+            }
+        }
+
+
+
+
         intent.getParcelableExtra<Pet>("pet_info")?.also { pet ->
             selectedPet = pet
-            paa.petNameTextTv.text = pet.name
-            paa.petSizeTextTv.text = pet.size
-            paa.petColorTextTv.text = pet.color
-            paa.petTypeTextTv.text = pet.type
-            paa.petBirthDateTextTv.text = pet.birthDate
-            paa.petPetshopVisitTextTv.text = pet.lastPetshopVisit
-            paa.petVeterinarianVisitTextTv.text = pet.lastVetVisit
-            paa.petLastVaccinationTextTv.text = pet.lastVaccination
+            updatePetDetails()
         }
+
 
 
 
@@ -69,10 +93,15 @@ class PetAreaActivity : AppCompatActivity() {
         }
     }
 
+
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_pet, menu)
         return true
     }
+
+
+
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when(item.itemId) {
@@ -85,26 +114,37 @@ class PetAreaActivity : AppCompatActivity() {
             }
             R.id.editLastTimeInVet -> {
                 Intent("ACTION_TO_OPEN_EDIT_PETS_LAST_VET_VISIT").apply {
-                    putExtra("pet_infos_for_edition", selectedPet)
-                    editPetInfosActivity.launch(this)
+                    putExtra("pet_infos_for_edition", selectedPet.lastVetVisit)
+                    editLastVetVisitDateActivity.launch(this)
                 }
                 true
             }
             R.id.editLastTimeInPetshop -> {
                 Intent("ACTION_TO_OPEN_EDIT_PETS_LAST_PETSHOP_VISIT").apply {
-                    putExtra("pet_infos_for_edition", selectedPet)
-                    editPetInfosActivity.launch(this)
+                    putExtra("pet_infos_for_edition", selectedPet.lastPetshopVisit)
+                    editLastPetshopDateActivity.launch(this)
                 }
                 true
             }
             R.id.editLastVaccination -> {
                 Intent("ACTION_TO_OPEN_EDIT_PETS_LAST_VACCINATION").apply {
-                    putExtra("pet_infos_for_edition", selectedPet)
-                    editPetInfosActivity.launch(this)
+                    putExtra("pet_infos_for_edition", selectedPet.lastVaccination)
+                    editLastVaccinationDateActivity.launch(this)
                 }
                 true
             }
             else -> { false }
         }
+    }
+
+    private fun updatePetDetails() {
+        paa.petNameTextTv.text = selectedPet.name
+        paa.petSizeTextTv.text = selectedPet.size
+        paa.petColorTextTv.text = selectedPet.color
+        paa.petTypeTextTv.text = selectedPet.type
+        paa.petBirthDateTextTv.text = selectedPet.birthDate
+        paa.petPetshopVisitTextTv.text = selectedPet.lastPetshopVisit
+        paa.petVeterinarianVisitTextTv.text = selectedPet.lastVetVisit
+        paa.petLastVaccinationTextTv.text = selectedPet.lastVaccination
     }
 }
