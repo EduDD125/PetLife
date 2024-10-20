@@ -33,19 +33,19 @@ class UserAreaActivity : AppCompatActivity() {
             title = getString(R.string.app_name)
         }
 
-        amb.seeDogsInfoBt.text = doguinho.name
-        amb.seeCattysInfoBt.text = gatinho.name
+        updateDogName()
+        updateCatName()
 
         petActivityLaucher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == RESULT_OK) {
-                result.data?.getParcelableExtra<Pet>("update_pet").let {
+                result.data?.getParcelableExtra<Pet>("back_to_user_area").let {
                     if (it?.type == doguinho.type) {
                         doguinho = it
-                        amb.seeDogsInfoBt.text = doguinho.name
+                        updateDogName()
                     } else if (it?.type == gatinho.type) {
                         gatinho = it
-                        amb.seeCattysInfoBt.text = it.name
+                        updateCatName()
                     }
                 }
             }
@@ -65,5 +65,13 @@ class UserAreaActivity : AppCompatActivity() {
                 petActivityLaucher.launch(this)
             }
         }
+    }
+
+    fun updateDogName() {
+        amb.seeDogsInfoBt.text = doguinho.name
+    }
+
+    fun updateCatName() {
+        amb.seeCattysInfoBt.text = gatinho.name
     }
 }
